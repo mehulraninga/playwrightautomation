@@ -1,0 +1,52 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Verify Application Title
+- Location: /Users/mehul/Desktop/PlaywrightDemo01/tests/google.spec.js:3:5
+
+# Error details
+
+```
+Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://wwww.google.com/
+Call log:
+  - navigating to "https://wwww.google.com/", waiting until "load"
+
+    at /Users/mehul/Desktop/PlaywrightDemo01/tests/google.spec.js:5:16
+```
+
+# Test source
+
+```ts
+   1 | import {test,expect} from "@playwright/test"
+   2 |
+   3 | test("Verify Application Title", async function({page}){
+   4 |
+>  5 |     await page.goto("https://wwww.google.com")
+     |                ^ Error: page.goto: net::ERR_NAME_NOT_RESOLVED at https://wwww.google.com/
+   6 |
+   7 |     const url = await page.url()
+   8 |
+   9 |     console.log("Page URL is = " +url)
+  10 |
+  11 |     const title = await page.title()
+  12 |
+  13 |     console.log("Page title is = " +title)
+  14 |
+  15 |     await expect(page).toHaveTitle("Google")
+  16 | })
+  17 | test("Test again", async function({page}){
+  18 |
+  19 |         await page.goto("http://www.google.com")
+  20 |         const url = await page.url()
+  21 |         console.log("Page URL is:- " +url)
+  22 |         const title = await page.title()
+  23 |         console.log("Page Title is:- " +title)
+  24 |         await expect(page).toHaveTitle("Google")
+  25 | })
+  26 |
+```

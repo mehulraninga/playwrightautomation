@@ -1,0 +1,7 @@
+TAP version 13
+# Subtest: Login with multiple users
+ok 1 - Login with multiple users
+  ---
+  duration_ms: 0.541958
+  type: 'suite'
+  ...

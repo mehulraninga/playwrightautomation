@@ -1,0 +1,8 @@
+Dropdown value is:- Select State
+Dropdown value is:- Andhra Pradesh
+Dropdown value is:- Arunachal Pradesh
+Dropdown value is:- Assam
+Dropdown value is:- Bihar
+Dropdown value is:- Chhattisgarh
+Dropdown value is:- Goa
+Dropdown value is:- Gujarat

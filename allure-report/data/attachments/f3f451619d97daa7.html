@@ -1,0 +1,75 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Validate Login
+- Location: /Users/mehul/Desktop/PlaywrightDemo01/tests/login.spec.js:3:5
+
+# Error details
+
+```
+Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+
+Locator: locator(':root')
+Expected pattern: /auction/
+Received string:  "https://devdemo.wavebid.com/next/login"
+Call log:
+  - expect.toHaveURL with timeout 5000ms
+  - waiting for locator(':root')
+    9 × locator resolved to <html lang="en" data-app-version="2.9.455.0">…</html>
+      - unexpected value "https://devdemo.wavebid.com/next/login"
+
+    at /Users/mehul/Desktop/PlaywrightDemo01/tests/login.spec.js:11:24
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - button "Wavebid Beta Logo":
+    - img "Wavebid Beta Logo"
+  - button "Info":
+    - img
+  - heading "Welcome back Handwave" [level=2]:
+    - text: Welcome back
+    - img "Handwave": 👋
+  - text: Enter your login details to get started Email Address
+  - textbox "Email Address": mehul.r@simformsolutions.com
+  - text: Password
+  - textbox "Password Eye Slash Your email address or password is incorrect. Try again.": Jadeja@1234
+  - button "Eye Slash"
+  - text: Your email address or password is incorrect. Try again.
+  - button "Login"
+  - button "Forgot Password"
+  - link "Terms"
+  - text: •
+  - link "Privacy"
+- alert
+```
+
+# Test source
+
+```ts
+   1 | import {test,expect} from "@playwright/test"
+   2 |
+   3 | test("Validate Login", async function({page}){
+   4 |
+   5 |     await page.goto("https://devdemo.wavebid.com/next/login")
+   6 |
+   7 |     await page.locator("input[name='username']").type("mehul.r@simformsolutions.com",{delay:200})
+   8 |     await page.locator("input[name='password']").type("Jadeja@1234",{delay:200})
+   9 |     await page.locator("//button[@type='submit']").click()
+  10 |     //await page.waitForTimeout(5000)
+> 11 |     await expect(page).toHaveURL(/auction/)
+     |                        ^ Error: Timed out 5000ms waiting for expect(locator).toHaveURL(expected)
+  12 |
+  13 |     await page.getByTestId("avatar").click()
+  14 |     await page.getByText("Log out").click()
+  15 |     //await page.waitForTimeout(5000)
+  16 |     await expect(page).toHaveURL(/login/)
+  17 | })
+```

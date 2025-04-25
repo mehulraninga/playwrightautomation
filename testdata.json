@@ -1,0 +1,13 @@
+{
+    "username": "mehul.r@simformsolutions",
+    "password": "Jadeja@123",
+    "name": "Mehul",
+    "interest": ["playwright", "Java", "Python"],
+    "address": {
+        "area": "Area 01",
+        "city": "Ahmedabad",
+        "state": "Gujarat",
+        "country": "India",
+        "pincode": 380001
+    }
+}

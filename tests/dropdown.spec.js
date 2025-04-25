@@ -1,6 +1,6 @@
 import {test,expect} from "@playwright/test"
 
-test.only("Select value from dropdown", async function({page}){
+test("Select value from dropdown", async function({page}){
 
     await page.goto("https://freelance-learn-automation.vercel.app/signup")
 

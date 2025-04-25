@@ -1,0 +1,137 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Select category from list
+- Location: /Users/mehul/Desktop/PlaywrightDemo01/tests/dropdown.spec.js:47:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for locator('//label[normalize-space()=\'M-WBPR-2094-01\']')
+
+    at /Users/mehul/Desktop/PlaywrightDemo01/tests/dropdown.spec.js:59:71
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - button "Menu":
+    - img
+  - button "Wavebid Beta Logo":
+    - img "Wavebid Beta Logo"
+  - text: Simform Test 13
+  - heading "M" [level=6]
+  - heading "Auctions" [level=4]
+  - text: "0"
+  - button "Plus New Auction":
+    - img "Plus"
+    - text: New Auction
+  - textbox "Search input": WBPR-2094-01
+  - button "Clear search text":
+    - img
+  - button "Search":
+    - img
+  - text: Status
+  - img "change filters"
+  - text: Marketplace
+  - img "change filters"
+  - text: Start date Missing info
+  - img
+  - heading "No auctions found" [level=5]
+  - text: Let's start creating your first auction
+  - button "Plus New Auction":
+    - img "Plus"
+    - text: New Auction
+  - button "Previous Page" [disabled]:
+    - img
+  - log
+  - text: Page 1
+  - combobox "Page 1"
+  - text: of 1
+  - button "Next Page" [disabled]:
+    - img
+  - log
+  - text: "Results per page: 25"
+  - 'combobox "Results per page: 25"'
+  - text: 1 - 0 of 0
+- alert
+```
+
+# Test source
+
+```ts
+   1 | import {test,expect} from "@playwright/test"
+   2 |
+   3 | test("Select value from dropdown", async function({page}){
+   4 |
+   5 |     await page.goto("https://freelance-learn-automation.vercel.app/signup")
+   6 |
+   7 |     await page.locator("#state").selectOption({label:"Goa"})
+   8 |     //await page.waitForTimeout(5000)
+   9 |     await page.locator("#state").selectOption({value:"Gujarat"})
+  10 |     //await page.waitForTimeout(5000)
+  11 |     await page.locator("#state").selectOption({index:10})
+  12 |     //await page.waitForTimeout(5000)
+  13 |
+  14 |    /* const value = await page.locator("#state").textContent()
+  15 |     console.log("All dropdown values are:- " +value)
+  16 |     await expect(value.includes("Gujarat")).toBeTruthy()
+  17 |     */
+  18 |
+  19 |     let state = await page.$("#state")
+  20 |     
+  21 |     let allelEments = await state.$$("option")
+  22 |
+  23 |     let ddStatus = false
+  24 |
+  25 |     for(let i=0; i<allelEments.length; i++){
+  26 |
+  27 |         let element = await allelEments[i]
+  28 |
+  29 |         let value = await element.textContent()
+  30 |
+  31 |         console.log("Dropdown value is:- " +value)
+  32 |
+  33 |         if(value.includes("Gujarat")){
+  34 |             ddStatus = true
+  35 |             break
+  36 |         }
+  37 |     }
+  38 |     await expect(ddStatus).toBeTruthy()
+  39 |     await page.waitForTimeout(5000) 
+  40 |     await page.locator("#state").selectOption({label:"Gujarat"})
+  41 |     await page.waitForTimeout(5000)
+  42 |
+  43 |     await page.locator("#hobbies").selectOption(['Playing','Swimming','Dancing'])
+  44 |     await page.waitForTimeout(3000)
+  45 | })
+  46 |
+  47 | test("Select category from list", async function({page}){
+  48 |
+  49 |     await page.goto("https://devdemo.wavebid.com/next/login")
+  50 |
+  51 |     await page.locator("input[name='username']").type("mehul.r@simformsolutions.com",{delay:100})
+  52 |     await page.locator("input[name='password']").type("Jadeja@123",{delay:100})
+  53 |     await page.locator("//button[@type='submit']").click()
+  54 |     await page.waitForTimeout(5000)
+  55 |     await expect(page).toHaveURL(/auction/)
+  56 |
+  57 |     await page.locator("#search-input").fill("WBPR-2094-01")
+  58 |     await page.waitForTimeout(5000)
+> 59 |     await page.locator("//label[normalize-space()='M-WBPR-2094-01']").click()
+     |                                                                       ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  60 |     await page.waitForTimeout(5000)
+  61 |     await page.locator("//a[@aria-label='Details']").click()
+  62 |     await page.locator("//li[@data-testid='auction-detail-card-basic']//button[@aria-label='Edit']//*[name()='svg']").click()
+  63 |     await page.waitForTimeout(5000)
+  64 |
+  65 | })
+```

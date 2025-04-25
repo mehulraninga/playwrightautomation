@@ -12,7 +12,7 @@ test("Handle Auto sugessions", async function({page}){
     await page.waitForTimeout(5000)
 })
 
-test.only("Handle Auto Sugessions wiht $$", async function({page}){
+test("Handle Auto Sugessions wiht $$", async function({page}){
 
     await page.goto("https://www.google.com");
     await page.locator("textarea[name='q']").type("Playwright Automation");

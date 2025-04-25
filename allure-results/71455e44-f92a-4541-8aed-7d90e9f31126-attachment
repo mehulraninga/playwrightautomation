@@ -1,0 +1,400 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: test
+- Location: /Users/mehul/Desktop/PlaywrightDemo01/tests/codegenFirst.spec.js:3:5
+
+# Error details
+
+```
+Error: locator.click: Test timeout of 30000ms exceeded.
+Call log:
+  - waiting for getByRole('link', { name: 'M-WBPR-2088-01 Draft Last' })
+
+    at /Users/mehul/Desktop/PlaywrightDemo01/tests/codegenFirst.spec.js:12:71
+```
+
+# Page snapshot
+
+```yaml
+- main:
+  - button "Menu":
+    - img
+  - button "Wavebid Beta Logo":
+    - img "Wavebid Beta Logo"
+  - text: Simform Test 13
+  - heading "M" [level=6]
+  - heading "Auctions" [level=4]
+  - text: "54"
+  - button "Plus New Auction":
+    - img "Plus"
+    - text: New Auction
+  - textbox "Search input": WBPR
+  - button "Clear search text":
+    - img
+  - button "Search":
+    - img
+  - text: Status
+  - img "change filters"
+  - text: Marketplace
+  - img "change filters"
+  - text: Start date Missing info
+  - img "wbpr-1122 Marina"
+  - 'link "wbpr-1122 Marina Draft Last update: 06/26/2024 Dot Outline #118952"':
+    - text: "wbpr-1122 Marina Draft Last update: 06/26/2024"
+    - img "Dot Outline"
+    - text: "#118952"
+  - text: 15 Lots
+  - button "15 missing lot info":
+    - img
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-1866-02"
+  - 'link "M-WBPR-1866-02 Completed Last update: 01/26/2025 Dot Outline #128267"':
+    - text: "M-WBPR-1866-02 Completed Last update: 01/26/2025"
+    - img "Dot Outline"
+    - text: "#128267"
+  - text: 3 Lots
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "wbpr 2101"
+  - 'link "wbpr 2101 Completed Last update: 01/23/2025 Dot Outline #128662"':
+    - text: "wbpr 2101 Completed Last update: 01/23/2025"
+    - img "Dot Outline"
+    - text: "#128662"
+  - text: —
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "WBPR-2101 Final Test"
+  - 'link "WBPR-2101 Final Test Completed Last update: 01/23/2025 Dot Outline #128572"':
+    - text: "WBPR-2101 Final Test Completed Last update: 01/23/2025"
+    - img "Dot Outline"
+    - text: "#128572"
+  - text: 96 Lots
+  - button "96 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2207-01"
+  - 'link "M-WBPR-2207-01 Draft Last update: 01/30/2025 Dot Outline #130038"':
+    - text: "M-WBPR-2207-01 Draft Last update: 01/30/2025"
+    - img "Dot Outline"
+    - text: "#130038"
+  - text: 6 Lots
+  - button "2 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2015-01"
+  - 'link "M-WBPR-2015-01 Draft Last update: 01/30/2025 Dot Outline #130037"':
+    - text: "M-WBPR-2015-01 Draft Last update: 01/30/2025"
+    - img "Dot Outline"
+    - text: "#130037"
+  - text: 10 Lots
+  - button "10 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-1858-01"
+  - 'link "M-WBPR-1858-01 Draft Last update: 01/31/2025 Dot Outline #130564"':
+    - text: "M-WBPR-1858-01 Draft Last update: 01/31/2025"
+    - img "Dot Outline"
+    - text: "#130564"
+  - text: 2 Lots
+  - button "2 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2111-01"
+  - 'link "M-WBPR-2111-01 Draft Last update: 01/31/2025 Dot Outline #130565"':
+    - text: "M-WBPR-2111-01 Draft Last update: 01/31/2025"
+    - img "Dot Outline"
+    - text: "#130565"
+  - text: 12 Lots
+  - button "12 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2111-02"
+  - 'link "M-WBPR-2111-02 Draft Last update: 02/03/2025 Dot Outline #130905"':
+    - text: "M-WBPR-2111-02 Draft Last update: 02/03/2025"
+    - img "Dot Outline"
+    - text: "#130905"
+  - text: 10 Lots
+  - button "10 missing lot info":
+    - img
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2251-01"
+  - 'link "M-WBPR-2251-01 Draft Last update: 02/04/2025 Dot Outline #131631"':
+    - text: "M-WBPR-2251-01 Draft Last update: 02/04/2025"
+    - img "Dot Outline"
+    - text: "#131631"
+  - text: 3 Lots
+  - button "3 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2263"
+  - 'link "M-WBPR-2263 Draft Last update: 02/07/2025 Dot Outline #134172"':
+    - text: "M-WBPR-2263 Draft Last update: 02/07/2025"
+    - img "Dot Outline"
+    - text: "#134172"
+  - text: 8 Lots
+  - button "8 missing lot info":
+    - img
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2263-02"
+  - 'link "M-WBPR-2263-02 Completed Last update: 02/16/2025 Dot Outline #135270"':
+    - text: "M-WBPR-2263-02 Completed Last update: 02/16/2025"
+    - img "Dot Outline"
+    - text: "#135270"
+  - text: 3 Lots
+  - button "3 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2246-01"
+  - 'link "M-WBPR-2246-01 Draft Last update: 02/11/2025 Dot Outline #135932"':
+    - text: "M-WBPR-2246-01 Draft Last update: 02/11/2025"
+    - img "Dot Outline"
+    - text: "#135932"
+  - text: 3 Lots
+  - button "2 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2263-03"
+  - 'link "M-WBPR-2263-03 Draft Last update: 02/11/2025 Dot Outline #135933"':
+    - text: "M-WBPR-2263-03 Draft Last update: 02/11/2025"
+    - img "Dot Outline"
+    - text: "#135933"
+  - text: 5 Lots
+  - button "5 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2247-01"
+  - 'link "M-WBPR-2247-01 Draft Last update: 02/11/2025 Dot Outline #135934"':
+    - text: "M-WBPR-2247-01 Draft Last update: 02/11/2025"
+    - img "Dot Outline"
+    - text: "#135934"
+  - text: 3 Lots
+  - button "3 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2246-02"
+  - 'link "M-WBPR-2246-02 Draft Last update: 02/12/2025 Dot Outline #136428"':
+    - text: "M-WBPR-2246-02 Draft Last update: 02/12/2025"
+    - img "Dot Outline"
+    - text: "#136428"
+  - text: 3 Lots
+  - button "2 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2248-01"
+  - 'link "M-WBPR-2248-01 Draft Last update: 02/12/2025 Dot Outline #136429"':
+    - text: "M-WBPR-2248-01 Draft Last update: 02/12/2025"
+    - img "Dot Outline"
+    - text: "#136429"
+  - text: 1 Lot
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2246-05"
+  - 'link "M-WBPR-2246-05 Draft Last update: 02/19/2025 Dot Outline #139937"':
+    - text: "M-WBPR-2246-05 Draft Last update: 02/19/2025"
+    - img "Dot Outline"
+    - text: "#139937"
+  - text: 3 Lots
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2292-01"
+  - 'link "M-WBPR-2292-01 Draft Last update: 02/19/2025 Dot Outline #139939"':
+    - text: "M-WBPR-2292-01 Draft Last update: 02/19/2025"
+    - img "Dot Outline"
+    - text: "#139939"
+  - text: 4 Lots
+  - button "4 missing lot info":
+    - img
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2016"
+  - 'link "M-WBPR-2016 Draft Last update: 11/19/2024 Dot Outline #125587"':
+    - text: "M-WBPR-2016 Draft Last update: 11/19/2024"
+    - img "Dot Outline"
+    - text: "#125587"
+  - text: 195 Lots
+  - button "195 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2015"
+  - 'link "M-WBPR-2015 Draft Last update: 01/23/2025 Dot Outline #125586"':
+    - text: "M-WBPR-2015 Draft Last update: 01/23/2025"
+    - img "Dot Outline"
+    - text: "#125586"
+  - text: 10 Lots
+  - button "10 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2305-01"
+  - 'link "M-WBPR-2305-01 Draft Last update: 02/25/2025 Dot Outline #142975"':
+    - text: "M-WBPR-2305-01 Draft Last update: 02/25/2025"
+    - img "Dot Outline"
+    - text: "#142975"
+  - text: 3 Lots
+  - button "3 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2308-01"
+  - 'link "M-WBPR-2308-01 Draft Last update: 03/03/2025 Dot Outline #144643"':
+    - text: "M-WBPR-2308-01 Draft Last update: 03/03/2025"
+    - img "Dot Outline"
+    - text: "#144643"
+  - text: 5 Lots
+  - button "5 missing lot info":
+    - img
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2363-01"
+  - 'link "M-WBPR-2363-01 Draft Last update: 03/07/2025 Dot Outline #148299"':
+    - text: "M-WBPR-2363-01 Draft Last update: 03/07/2025"
+    - img "Dot Outline"
+    - text: "#148299"
+  - text: 1 Lot
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - img "M-WBPR-2352-01"
+  - 'link "M-WBPR-2352-01 Draft Last update: 03/04/2025 Dot Outline #146052"':
+    - text: "M-WBPR-2352-01 Draft Last update: 03/04/2025"
+    - img "Dot Outline"
+    - text: "#146052"
+  - text: —
+  - img "proxibid"
+  - button "Unpublished changes":
+    - img
+  - button "Dots Three Outline Vertical":
+    - img "Dots Three Outline Vertical"
+  - button "Previous Page" [disabled]:
+    - img
+  - log
+  - text: Page 1
+  - combobox "Page 1"
+  - text: of 3
+  - button "Next Page":
+    - img
+  - log
+  - text: "Results per page: 25"
+  - 'combobox "Results per page: 25"'
+  - text: 1 - 25 of 54
+- alert
+```
+
+# Test source
+
+```ts
+   1 | import { test, expect } from '@playwright/test';
+   2 |
+   3 | test('test', async ({ page }) => {
+   4 |   await page.goto('https://devdemo.wavebid.com/next/login');
+   5 |   await page.getByTestId('username').click();
+   6 |   await page.getByTestId('username').fill('mehul.r@simformsolutions.com');
+   7 |   await page.getByTestId('username').press('Tab');
+   8 |   await page.getByTestId('password').fill('Jadeja@123');
+   9 |   await page.getByTestId('loginButton').click();
+  10 |   await page.getByRole('textbox', { name: 'Search input' }).click();
+  11 |   await page.getByRole('textbox', { name: 'Search input' }).fill('WBPR');
+> 12 |   await page.getByRole('link', { name: 'M-WBPR-2088-01 Draft Last' }).click();
+     |                                                                       ^ Error: locator.click: Test timeout of 30000ms exceeded.
+  13 |   await page.getByTestId('add-lot-icon-toolbar-btn').click();
+  14 |   await page.getByRole('button', { name: 'Plus Circle Single item Add' }).click();
+  15 |   await page.getByTestId('lotBasics-number').fill('101');
+  16 |   await page.getByTestId('lotBasics-number').press('Tab');
+  17 |   await page.getByTestId('lotBasics-title').fill('Lot One zero One');
+  18 |   await page.getByTestId('lotBasics-description').click();
+  19 |   await page.getByTestId('lotBasics-description').fill('Test');
+  20 |   await page.getByTestId('header-lot-save').click();
+  21 |   await page.getByTestId('edit-lot-form').getByTestId('backButton').click();
+  22 |   await page.getByTestId('edit-catalog-icon-toolbar-btn').click();
+  23 |   await page.getByRole('row', { name: 'Dots Six Vertical 101 Lot One' }).locator('label').getByRole('img').click();
+  24 |   await page.getByTestId('bulk-delete-lots-btn').click();
+  25 |   await page.getByTestId('confirm-delete-lots').click();
+  26 |   await page.getByTestId('close-edit-catalog-btn').click();
+  27 |   await page.getByTestId('avatar').getByRole('heading', { name: 'M' }).click();
+  28 |   await page.getByText('Log out').click();
+  29 | });
+```
